@@ -8,21 +8,23 @@
 
 /*
 
-SERVICES TO DISABLE
+    SERVICES TO DISABLE
 
-\\Registry\\Machine\\SYSTEM\ControlSet001\Services\ProfSvc
-\\Registry\\Machine\\SYSTEM\ControlSet001\Services\ShellHWDetection
-\\Registry\\Machine\\SYSTEM\ControlSet001\Services\DoSvc
-\\Registry\\Machine\\SYSTEM\ControlSet001\Services\DsmSvc
-\\Registry\\Machine\\SYSTEM\ControlSet001\Services\BITS
-\\Registry\\Machine\\SYSTEM\ControlSet001\Services\iphlpsvc
-\\Registry\\Machine\\SYSTEM\ControlSet001\Services\MDCoreSvc
-\\Registry\\Machine\\SYSTEM\ControlSet001\Services\CryptSvc
-FILES AND DIRECTORIES TO DELETE
+    \\Registry\\Machine\\SYSTEM\ControlSet001\Services\ProfSvc - DONE
+    \\Registry\\Machine\\SYSTEM\ControlSet001\Services\ShellHWDetection - DONE
+    \\Registry\\Machine\\SYSTEM\ControlSet001\Services\DoSvc - DONE
+    \\Registry\\Machine\\SYSTEM\ControlSet001\Services\DsmSvc - DONE
+    \\Registry\\Machine\\SYSTEM\ControlSet001\Services\BITS - DONE
+    \\Registry\\Machine\\SYSTEM\ControlSet001\Services\iphlpsvc - DONE
+    \\Registry\\Machine\\SYSTEM\ControlSet001\Services\MDCoreSvc - NOT DONE (STATUS_ACCESS_DENIED)
+    \\Registry\\Machine\\SYSTEM\ControlSet001\Services\CryptSvc - DONE
+    \\Registry\\Machine\\SYSTEM\ControlSet001\Services\PushToInstall - DONE
 
-\??\C:\Windows\System32\smartscreen.exe
-\??\C:\ProgramData\Microsoft\Windows Defender\*.*
-\??\C:\Program Files (x86)\Microsoft\Edge
+    FILES AND DIRECTORIES TO DELETE
+
+    \??\C:\Windows\System32\smartscreen.exe - NOT DONE (STATUS_ACCESS_DENIED)
+    \??\C:\ProgramData\Microsoft\Windows Defender\*.* - NOT DONE
+    \??\C:\Program Files (x86)\Microsoft\Edge - NOT DONE
 
 */
 
@@ -60,6 +62,10 @@ void NtEntry(){
     // result = RtlDisableServicesViaTheRegistry(L"\\Registry\\Machine\\SYSTEM\\ControlSet001\\Services\\MDCoreSvc");
     // if(!result) IsSuccess = FALSE;
     // RtlSleep(5000);
+    RtlDrawBootText(L"Disabling PushToInstall");
+    result = RtlDisableServicesViaTheRegistry(L"\\Registry\\Machine\\SYSTEM\\ControlSet001\\Services\\PushToInstall");
+    if(!result) IsSuccess = FALSE;
+    RtlSleep(5000);
     RtlDrawBootText(L"Disabling CryptSvc");
     result = RtlDisableServicesViaTheRegistry(L"\\Registry\\Machine\\SYSTEM\\ControlSet001\\Services\\CryptSvc");
     if(!result) IsSuccess = FALSE;
