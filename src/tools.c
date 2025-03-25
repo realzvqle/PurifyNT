@@ -82,6 +82,7 @@ BOOL RtlDisableServicesViaTheRegistry(PCWSTR key){
     return TRUE;
 }
 
+//autocheck autochk *
 
 WCHAR* RtlStatusToString(NTSTATUS status, WCHAR* str) {
     const int HEX_BASE = 16;

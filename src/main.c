@@ -35,8 +35,8 @@
     \\Registry\\Machine\\SYSTEM\ControlSet001\Services\LicenseManager - DONE
     \\Registry\\Machine\\SYSTEM\ControlSet001\Services\WdiServiceHost - DONE
     \\Registry\\Machine\\SYSTEM\ControlSet001\Services\WdiSystemHost - DONE
-    \\Registry\\Machine\\SYSTEM\ControlSet001\Services\ClipSVC
-    \\Registry\\Machine\\SYSTEM\ControlSet001\Services\SecurityHealthService
+    \\Registry\\Machine\\SYSTEM\ControlSet001\Services\ClipSVC - DONE
+    \\Registry\\Machine\\SYSTEM\ControlSet001\Services\SecurityHealthService - DONE
     FILES AND DIRECTORIES TO DELETE
 
     \??\C:\Windows\System32\smartscreen.exe - NOT DONE (STATUS_ACCESS_DENIED)
